@@ -17,7 +17,7 @@
   "plugins": ["import", "jsx-a11y", "react", "react-hooks", "prettier"],
   "extends": ["airbnb", "prettier", "next", "next/core-web-vitals"],
   "rules": {
-    "prettier/prettier": ["error", {"endOfLine": "auto"}],
+    "prettier/prettier": ["error", { "endOfLine": "auto" }],
     "camelcase": "off",
     "import/prefer-default-export": "off",
     "react/prop-types": "off",
@@ -58,7 +58,9 @@
         "no-use-before-define": [0],
         "@typescript-eslint/no-use-before-define": [1],
         "@typescript-eslint/no-explicit-any": "off",
-        "@typescript-eslint/no-var-requires": "off"
+        "@typescript-eslint/no-var-requires": "off",
+        "no-restricted-syntax": "warn",
+        "no-await-in-loop": "warn"
       }
     }
   ],
