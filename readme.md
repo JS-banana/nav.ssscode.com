@@ -2,7 +2,12 @@
 
 一个用于管理收藏的优秀网站、博客、工具、GitHub仓库、文章、周刊等等的导航网站
 
-## 技术栈
+## 技术路线
+
+- 前端：Next.js + React
+- 服务：Node.js + Prisma + SQLite
+
+### 技术栈
 
 - TypeScript
 - React
@@ -10,7 +15,23 @@
 - Prisma + SQLite
 - Tailwindcss
 
-## 技术栈缘由
+### 工程化规范
+
+- eslint
+- prettier
+- husky + commitlint
+
+### 一些说明
+
+- pnpm
+
+推荐使用 `pnpm` 包管理工具，注意在 `.npmrc` 中添加 `shamefully-hoist = true`，作用是提升依赖，用于解决部分包无法找到导出变量问题
+
+- commitlint
+
+commit type: build, chore, ci, docs, feat, fix, perf, refactor, revert, style, test
+
+### 技术栈缘由
 
 - TypeScript
 
