@@ -1,0 +1,74 @@
+{
+  "name": "hello-next",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "license": "MIT",
+  "author": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "type-check": "tsc",
+    "lint": "eslint --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\"",
+    "format": "prettier --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\" --write",
+    "postinstall": "husky install",
+    "commit": "cz"
+  },
+  "lint-staged": {
+    "./src/**/*.{ts,js,jsx,tsx}": [
+      "yarn lint --fix",
+      "yarn format"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "dependencies": {
+    "@prisma/client": "3.4.0",
+    "next": "11.1.2",
+    "react": "17.0.0",
+    "react-dom": "17.0.0",
+    "react-markdown": "7.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "16.4.2",
+    "@types/react": "17.0.34",
+    "prisma": "3.4.0",
+    "ts-node": "10.4.0",
+    "typescript": "4.4.4",
+    "@commitlint/cli": "13.1.0",
+    "@commitlint/config-conventional": "13.1.0",
+    "@types/dom-to-image": "2.6.3",
+    "@types/file-saver": "2.0.3",
+    "@types/react-dom": "17.0.9",
+    "@typescript-eslint/eslint-plugin": "4.31.1",
+    "@typescript-eslint/parser": "4.31.1",
+    "autoprefixer": "10.3.5",
+    "commitizen": "4.2.4",
+    "cz-conventional-changelog": "3.3.0",
+    "eslint": "7.32.0",
+    "eslint-config-airbnb": "18.2.1",
+    "eslint-config-next": "11.1.2",
+    "eslint-config-prettier": "8.3.0",
+    "eslint-import-resolver-typescript": "2.5.0",
+    "eslint-plugin-import": "2.23.4",
+    "eslint-plugin-jsx-a11y": "6.4.1",
+    "eslint-plugin-prettier": "4.0.0",
+    "eslint-plugin-react": "7.24.0",
+    "eslint-plugin-react-hooks": "4.2.0",
+    "husky": "7.0.2",
+    "lint-staged": "11.1.2",
+    "postcss": "8.3.7",
+    "prettier": "2.4.0",
+    "puppeteer": "10.4.0",
+    "svgo": "2.7.0",
+    "tailwindcss": "2.2.15"
+  },
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts"
+  }
+}
