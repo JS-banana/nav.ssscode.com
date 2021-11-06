@@ -48,3 +48,34 @@ commit type: build, chore, ci, docs, feat, fix, perf, refactor, revert, style, t
 Prisma 与 [Sequelize](http://docs.sequelizejs.com/) 、[TypeORM](https://github.com/typeorm/typeorm/)等类似，不过，该ORM具有一定的优势，我也是倾向于它，所有选择了这个，对于数据库操作，ORM的重要性及方便性不言而喻
 
 在第三方SQL云数据库与SQLite之间犹豫了一段时间，选择第三方云数据库主要是想着结合serveless使用云接口会比较方便，一般厂家也都会提供500m-1G的免费空间，对于我这种练手及小需求是足够了，优缺点都有，结合我自身方向，先上手SQLite练练手比较简单易上手
+
+## 数据库/表
+
+- 分类
+
+待定：每个分类应该对应一张表，如：前端框架表、GitHub仓库表、工具网站表等
+
+确定：可以确定的是 表结构字段应该基本类似，即每个收藏内容项的相关属性：name、desc、tags、category、logo等
+
+- 标签
+
+和表有关联映射关系，一张标签表，搜索相关标签需要检索到相关联的表中数据，如：React、组件、GitHub、可视化
+
+### 表
+
+- 网站
+
+| 字段      | 类型     | 描述     |
+|-----------|----------|---------|
+| id        | Int      | 主key    |
+| name      | String   | 名称     |
+| desc      | String   | 描述     |
+| detail    | String   | 详情     |
+| category  | array    | 分类     |
+| tags      | String[] | 标签     |
+| link      | String   | 链接     |
+| logo      | String   | 图片     |
+| likeNum   | Int      | 喜欢     |
+| viewNum   | Int      | 浏览量   |
+| createdAt | DateTime | 创建时间 |
+| updatedAt | DateTime | 更新时间 |
