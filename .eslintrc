@@ -14,7 +14,7 @@
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
   },
-  "plugins": ["import", "jsx-a11y", "react", "react-hooks", "prettier"],
+  "plugins": ["import", /*"jsx-a11y",*/ "react", "react-hooks", "prettier"],
   "extends": ["airbnb", "prettier", "next", "next/core-web-vitals"],
   "rules": {
     "prettier/prettier": ["error", { "endOfLine": "auto" }],
@@ -26,6 +26,12 @@
     "react/no-unused-prop-types": "off",
     "react/react-in-jsx-scope": "off",
     "react/require-default-props": "off",
+    "react/button-has-type": "warn",
+    "no-await-in-loop": "warn",
+    "react/destructuring-assignment": "warn",
+    "react/no-children-prop": "warn",
+    "jsx-a11y/click-events-have-key-events": "warn",
+    "jsx-a11y/no-static-element-interactions": "warn",
     "import/extensions": [
       "error",
       "ignorePackages",
@@ -59,8 +65,7 @@
         "@typescript-eslint/no-use-before-define": [1],
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/no-var-requires": "off",
-        "no-restricted-syntax": "warn",
-        "no-await-in-loop": "warn"
+        "no-restricted-syntax": "warn"
       }
     }
   ],
