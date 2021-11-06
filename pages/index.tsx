@@ -38,10 +38,9 @@ const Blog: React.FC<Props> = (props) => (
 
 export const getServerSideProps: GetServerSideProps = async () => {
   const res = await fetch('http://localhost:3000/api/feed');
-  // const feed = await res.json();
-  console.log('res', res);
+  const feed = await res.json();
   return {
-    props: { feed: [] },
+    props: { feed },
   };
 };
 
