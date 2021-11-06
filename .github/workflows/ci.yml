@@ -24,8 +24,8 @@ jobs:
       - name: Install dependencies (with cache)
         uses: bahmutov/npm-install@HEAD
 
-      - name: Check types
-        run: yarn type-check
+      # - name: Check types
+      #   run: yarn type-check
 
       - name: Check linting
         run: yarn lint
