@@ -1,5 +1,5 @@
 {
-  "name": "hello-next",
+  "name": "nav.ssscode.com",
   "version": "1.0.0",
   "description": "",
   "keywords": [],
@@ -10,7 +10,6 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "type-check": "tsc",
     "lint": "eslint --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\"",
     "format": "prettier --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\" --write",
     "postinstall": "husky install",
@@ -28,7 +27,11 @@
     }
   },
   "dependencies": {
+    "@chakra-ui/react": "^1.6.12",
+    "@emotion/react": "^11",
+    "@emotion/styled": "^11",
     "@prisma/client": "^3.4.0",
+    "framer-motion": "^4",
     "next": "^12.0.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
