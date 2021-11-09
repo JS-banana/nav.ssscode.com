@@ -4,24 +4,39 @@ generator client {
 
 datasource db {
   provider = "sqlite"
-  url      = "file:./dev.db"
+  url      = "file:./nav.db"
 }
 
-model User {
+// 分类表
+model Category {
   id    Int     @id @default(autoincrement())
-  email String  @unique
-  name  String?
-  posts Post[]
+  name  String  @unique
+  desc  String?
+  sites Site[]
 }
 
-model Post {
-  id        Int      @id @default(autoincrement())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  title     String
-  content   String?
-  published Boolean  @default(false)
-  viewCount Int      @default(0)
-  author    User?    @relation(fields: [authorId], references: [id])
-  authorId  Int?
+// 标签
+model Tags {
+  id    Int     @id @default(autoincrement())
+  name  String? @unique
+  desc  String?
+  sites Site[]
+}
+
+// 网站表
+model Site {
+  id         Int       @id @default(autoincrement())
+  name       String
+  desc       String
+  detail     String
+  link       String
+  logo       String?
+  likeNum    Int       @default(0)
+  viewNum    Int       @default(0)
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+  category   Category? @relation(fields: [categoryId], references: [id])
+  categoryId Int?
+  tags       Tags?     @relation(fields: [tagsId], references: [id])
+  tagsId     Int?
 }

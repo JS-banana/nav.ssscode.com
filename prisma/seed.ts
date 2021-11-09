@@ -2,46 +2,18 @@ import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
-const userData = [
+const siteData = [
   {
-    name: 'Alice',
-    email: 'alice@prisma.io',
-    posts: {
+    name: '框架',
+    desc: '这是个关于“框架”的描述',
+    sites: {
       create: [
         {
-          title: 'Join the Prisma Slack',
-          content: 'https://slack.prisma.io',
-          published: true,
-        },
-      ],
-    },
-  },
-  {
-    name: 'Nilu',
-    email: 'nilu@prisma.io',
-    posts: {
-      create: [
-        {
-          title: 'Follow Prisma on Twitter',
-          content: 'https://www.twitter.com/prisma',
-          published: true,
-        },
-      ],
-    },
-  },
-  {
-    name: 'Mahmoud',
-    email: 'mahmoud@prisma.io',
-    posts: {
-      create: [
-        {
-          title: 'Ask a question about Prisma on GitHub',
-          content: 'https://www.github.com/prisma/prisma/discussions',
-          published: true,
-        },
-        {
-          title: 'Prisma on YouTube',
-          content: 'https://pris.ly/youtube',
+          name: 'React',
+          desc: '渐进式框架',
+          detail: 'A JavaScript library for building user interfaces',
+          link: 'https://reactjs.org/',
+          logo: '',
         },
       ],
     },
@@ -50,15 +22,14 @@ const userData = [
 
 async function main() {
   console.log(`Start seeding ...`);
-  for (const u of userData) {
-    const user = await prisma.user.create({
+  for (const u of siteData) {
+    const category = await prisma.category.create({
       data: u,
     });
-    console.log(`Created user with id: ${user.id}`);
+    console.log(`Created user with id: ${category.id}`);
   }
   console.log(`Seeding finished.`);
 }
-
 main()
   .catch((e) => {
     console.error(e);
